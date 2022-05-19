@@ -1,9 +1,11 @@
 package com.miger4ik.demospring.controllers;
 
+import com.miger4ik.demospring.config.SwaggerConfig;
 import com.miger4ik.demospring.mappers.UserMapper;
 import com.miger4ik.demospring.models.UserRequest;
 import com.miger4ik.demospring.models.UserResponse;
 import com.miger4ik.demospring.services.UserService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/api/admin/v1/user")
 @RestController
+@Api(tags = {SwaggerConfig.USER_TAG})
 public class UserController {
 
     private final UserService userService;
